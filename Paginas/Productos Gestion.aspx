@@ -18,7 +18,7 @@
             <br />
             <asp:Label runat="server" CssClass="sub-titulos" Visible="false" ID="lblID"></asp:Label>
             <br />
-            <asp:TextBox runat="server" ID="txtID" CssClass="campos" Visible="false"></asp:TextBox>
+            <asp:TextBox runat="server" ID="txtID" CssClass="campos" Visible="false" ReadOnly="true"></asp:TextBox>
             <br />
             <br />
             <asp:Label runat="server" CssClass="sub-titulos">Escribe el Nombre</asp:Label>
