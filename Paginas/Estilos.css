@@ -1,0 +1,87 @@
+﻿body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+}
+
+.titulos {
+    text-align: center;
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.sub-titulos {
+    display: block;
+    margin: 10px auto 5px auto;
+    font-size: 16px;
+    color: #34495e;
+    font-weight: bold;
+    text-align:center
+}
+
+.campos {
+    display: block;
+    width: 300px;
+    margin: 0 auto 15px auto;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #e6f4fa;
+    font-weight: bold;
+}
+
+.listas {
+    display: block;
+    width: 300px;
+    margin: 0 auto 15px auto;
+    padding: 6px;
+    border-radius: 5px;
+    background-color: #e6f4fa;
+    font-weight: bold;
+}
+
+.botones {
+    margin: 5px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4b5ba1;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    text-align:center;
+}
+.contenedor{
+    align-items:center;
+    text-align:center;
+}
+
+.sub-contenedor {
+    background-color: #d6defa;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 900px;
+    box-shadow: 0 0 10px;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+th {
+    background-color: #4b5ba1;
+    color: white;
+}

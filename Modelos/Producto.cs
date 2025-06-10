@@ -85,20 +85,21 @@ namespace Sistema_de_Gestión_de_Inventario.Modelos
             }
         }
 
-        public static bool ModificarProducto(Producto producto)
+        public static bool ModificarProducto(int id, string nombre, string descripcion, double precio, int cantidad, int categoria, int proveedor)
         {
             try
             {
                 List<Producto> productos = Producto.ObtenerProductos();
-                Producto productoE = productos.FirstOrDefault(p => p.id == producto.id);
+                Producto productoE = productos.FirstOrDefault(p => p.id == id);
                 if (productoE != null)
                 {
-                    productoE.nombre = producto.nombre;
-                    productoE.descripcion = producto.descripcion;
-                    productoE.precio = producto.precio;
-                    productoE.cantidad = producto.cantidad;
-                    productoE.categoria = producto.categoria;
-                    productoE.proveedor = producto.proveedor;
+                    productoE.id = id;
+                    productoE.nombre = nombre;
+                    productoE.descripcion = descripcion;
+                    productoE.precio = precio;
+                    productoE.cantidad = cantidad;
+                    productoE.categoria = Categoria.BuscarCategoria(categoria);
+                    productoE.proveedor = Proveedor.BuscarProveedor(proveedor);
                     System.Web.HttpContext.Current.Application["productos"] = productos;
                     return true;
                 }
@@ -127,6 +128,12 @@ namespace Sistema_de_Gestión_de_Inventario.Modelos
                 System.Web.HttpContext.Current.Application["productoCategoria"] = new List<Producto>();
                 return (List<Producto>)System.Web.HttpContext.Current.Application["productoCategoria"];
             }
+        }
+        public static Producto BuscarProducto(int id)
+        {
+            List<Producto> productos = ObtenerProductos();
+            Producto producto = productos.FirstOrDefault(p => p.id == id);
+            return producto;
         }
     }
 }

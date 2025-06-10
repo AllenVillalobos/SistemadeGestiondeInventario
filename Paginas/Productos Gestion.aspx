@@ -5,54 +5,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>Gestion de Productos</title>
+    <link href="Estilos.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <h1>Gestion de Productos</h1>
+        <div class="contenedor">
+            <h1 class="titulos">Gestion de Productos</h1>
             <br />
-            <asp:Label runat="server">Agrega Un Producto</asp:Label>
-            <br />
-            <br />
-            <asp:Label runat="server">Escribe el Nombre</asp:Label>
-            <br />
-            <asp:TextBox runat="server" ID="txtNombre"></asp:TextBox>
+            <asp:Label runat="server" CssClass="sub-titulos" ID="lblMensajePrincipal">Agrega Un Producto</asp:Label>
             <br />
             <br />
-            <asp:Label runat="server">Escribe una Descripcion</asp:Label>
+            <asp:Label runat="server" CssClass="sub-titulos" Visible="false" ID="lblID"></asp:Label>
             <br />
-            <asp:TextBox runat="server" ID="txtDescripcion"></asp:TextBox>
-            <br />
-            <br />
-            <asp:Label runat="server">Escribe el Precio</asp:Label>
-            <br />
-            <asp:TextBox runat="server" ID="txtPrecio"></asp:TextBox>
+            <asp:TextBox runat="server" ID="txtID" CssClass="campos" Visible="false"></asp:TextBox>
             <br />
             <br />
-            <asp:Label runat="server">Escribe la Cantidad</asp:Label>
+            <asp:Label runat="server" CssClass="sub-titulos">Escribe el Nombre</asp:Label>
             <br />
-            <asp:TextBox runat="server" ID="txtCantidad"></asp:TextBox>
-            <br />
-            <br />
-            <asp:Label runat="server">Selecciona Una Categoria</asp:Label>
-            <br />
-            <asp:DropDownList runat="server" ID="ddlCategoria" AutoPostBack="true"></asp:DropDownList>
+            <asp:TextBox runat="server" ID="txtNombre" CssClass="campos"></asp:TextBox>
             <br />
             <br />
-            <asp:Label runat="server">Selecciona Un Proveedor</asp:Label>
+            <asp:Label runat="server" CssClass="sub-titulos">Escribe una Descripcion</asp:Label>
             <br />
-            <asp:DropDownList runat="server" ID="ddlProveedor" AutoPostBack="true"></asp:DropDownList>
-            <br />
-            <asp:Button runat="server" ID="btnAgregar" Text="Agregar Producto" OnClick="btnAgregar_Click" />
+            <asp:TextBox runat="server" ID="txtDescripcion" CssClass="campos"></asp:TextBox>
             <br />
             <br />
+            <asp:Label runat="server" CssClass="sub-titulos">Escribe el Precio</asp:Label>
             <br />
-            <div>
-                <asp:Label runat="server">Selecciona Una Categoria</asp:Label>
+            <asp:TextBox runat="server" ID="txtPrecio" CssClass="campos"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Label runat="server" CssClass="sub-titulos">Escribe la Cantidad</asp:Label>
+            <br />
+            <asp:TextBox runat="server" ID="txtCantidad" CssClass="campos"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Label runat="server" CssClass="sub-titulos">Selecciona Una Categoria</asp:Label>
+            <br />
+            <asp:DropDownList runat="server" ID="ddlCategoria" AutoPostBack="true" CssClass="listas"></asp:DropDownList>
+            <br />
+            <br />
+            <asp:Label runat="server" CssClass="sub-titulos">Selecciona Un Proveedor</asp:Label>
+            <br />
+            <asp:DropDownList runat="server" ID="ddlProveedor" AutoPostBack="true" CssClass="listas"></asp:DropDownList>
+            <br />
+            <asp:Button runat="server" ID="btnAgregar" Text="Agregar Producto" OnClick="btnAgregar_Click" CssClass="botones" />
+            <asp:Button runat="server" ID="btnEditar" Text="Editar Producto" OnClick="btnEditar_Click" CssClass="botones" Visible="false" />
+            <br />
+            <br />
+            <br />
+            <div class="sub-contenedor">
+                <asp:Label runat="server" CssClass="sub-titulos">Selecciona Una Categoria</asp:Label>
                 <br />
-                <asp:DropDownList runat="server" ID="ddlFiltro" AutoPostBack="true"></asp:DropDownList>
-                <asp:Button runat="server" ID="btnFiltro" Text="Filtrar" OnClick="btnFiltro_Click"/>
+                <asp:DropDownList runat="server" ID="ddlFiltro" AutoPostBack="true" CssClass="listas"></asp:DropDownList>
+                <asp:Button runat="server" ID="btnFiltro" Text="Filtrar" OnClick="btnFiltro_Click" CssClass="botones" />
                 <br />
                 <asp:ListView runat="server" ID="lvProductos" OnItemCommand="lvProductos_ItemCommand">
                     <LayoutTemplate>
@@ -93,11 +100,13 @@
                             <td><%#Eval("proveedor.nombre") %></td>
                             <td>
                                 <asp:Button runat="server" Text="Eliminar"
-                                    CommandName="eliminar" CommandArgument='<%#Eval("id") %>' ID="btnEliminar" />
+                                    CommandName="eliminar" CommandArgument='<%#Eval("id") %>' ID="btnEliminar"
+                                    CssClass="botones" />
                             </td>
                             <td>
                                 <asp:Button runat="server" Text="Modificar"
-                                    CommandName="modificar" CommandArgument='<%#Eval("id") %>' ID="btnModificar" />
+                                    CommandName="modificar" CommandArgument='<%#Eval("id") %>' ID="btnModificar"
+                                    CssClass="botones" />
                             </td>
                         </tr>
                     </ItemTemplate>
