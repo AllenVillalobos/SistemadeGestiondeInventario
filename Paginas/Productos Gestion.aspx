@@ -52,7 +52,7 @@
                 <asp:Label runat="server">Selecciona Una Categoria</asp:Label>
                 <br />
                 <asp:DropDownList runat="server" ID="ddlFiltro" AutoPostBack="true"></asp:DropDownList>
-                <asp:Button runat="server" ID="btnFiltro" Text="Filtrar" />
+                <asp:Button runat="server" ID="btnFiltro" Text="Filtrar" OnClick="btnFiltro_Click"/>
                 <br />
                 <asp:ListView runat="server" ID="lvProductos" OnItemCommand="lvProductos_ItemCommand">
                     <LayoutTemplate>

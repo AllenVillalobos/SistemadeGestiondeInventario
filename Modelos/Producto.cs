@@ -112,11 +112,11 @@ namespace Sistema_de_Gestión_de_Inventario.Modelos
                 return false;
             }
         }
-        public static List<Producto> PorCategoria(string categoria)
+        public static List<Producto> PorCategoria(int categoria)
         {
             List<Producto> productos = ObtenerProductos();
             List<Producto> productosCategoria = new List<Producto>();
-            productosCategoria = productos.Where(p => p.categoria.nombre == categoria).ToList();
+            productosCategoria = productos.Where(p => p.categoria.id == categoria).ToList();
             if (productosCategoria.Count > 0)
             {
                 System.Web.HttpContext.Current.Application["productoCategoria"] = productosCategoria;
